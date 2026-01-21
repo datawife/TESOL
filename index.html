@@ -7,64 +7,30 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
-			/* Remove vertical lines */
-			.header-container {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				gap: 2rem;
-				margin-bottom: 2rem;
-			}
-			
-			.logo, .content {
-				border: none !important;
-				position: relative !important;
-			}
-			
-			/* Remove any pseudo-elements that might be creating lines */
-			.logo::before, .logo::after,
-			.content::before, .content::after,
-			.header-container::before, .header-container::after {
+			/* Additional CSS to remove vertical lines */
+			#header > *:before {
 				display: none !important;
-				content: none !important;
 			}
-			
-			/* Footer styling */
-			.footer-content {
+			#header nav.use-middle:after {
+				display: none !important;
+			}
+			.header-container {
 				display: flex;
 				flex-direction: column;
 				align-items: center;
-				justify-content: center;
-				padding: 1rem;
-				text-align: center;
+				width: 100%;
 			}
-			
-			.contact-link {
-				margin-bottom: 0.5rem;
+			#footer .footer-content {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 1rem;
+				padding: 1rem 0;
 			}
-			
-			.copyright {
-				font-size: 0.9rem;
-				color: #777;
+			#footer .copyright {
+				font-size: 0.8rem;
+				opacity: 0.8;
 				margin-top: 0.5rem;
-			}
-			
-			/* Remove any border from nav */
-			nav {
-				border: none !important;
-			}
-			
-			nav ul {
-				border: none !important;
-			}
-			
-			/* Remove any lines that might be between header sections */
-			#header {
-				border: none !important;
-			}
-			
-			#header > * {
-				border: none !important;
 			}
 		</style>
 	</head>
