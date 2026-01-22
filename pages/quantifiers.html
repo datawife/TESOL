@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESL Lesson: Unspecified Quantifiers</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #ecf0f1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #121212;
+        }
+        h1 {
+            color: #3498db;
+            text-align: center;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #9b59b6;
+            margin-top: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #34495e;
+        }
+        th {
+            background-color: #2c3e50;
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #1e272e;
+        }
+        tr:hover {
+            background-color: #2980b9;
+        }
+        .purple {
+            color: #9b09b6;
+            font-weight: bold;
+        }
+        .green {
+            color: #2ecc71;
+            font-style: italic;
+        }
+        .exercise {
+            background-color: #1e272e;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #3498db;
+        }
+        .question {
+            margin: 15px 0;
+            font-weight: bold;
+            color: #3498db;
+        }
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        .option {
+            padding: 8px 12px;
+            background-color: #2c3e50;
+            border: 1px solid #3498db;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: #ecf0f1;
+        }
+        .option:hover {
+            background-color: #5500db;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #bdc3c7;
+            font-size: 0.9em;
+        }
+        ol {
+            background-color: #1e272e;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1> Unspecified Quantifiers</h1>
+    
+
+    <table>
+        <thead>
+            <tr>
+                <th><span class="purple">Quantifier</span></th>
+                <th>Example Sentence</th>
+                <th>Meaning</th>
+                <th>Verb Agreement</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="purple">Some</span></td>
+                <td><span class="green">Some people are here</span> / <span class="green">Some water is needed</span></td>
+                <td>An unspecified amount (could be small or large)</td>
+                <td>Plural / Singular (uncountable)</td>
+                <td>Works with countable plurals and uncountable nouns</td>
+            </tr>
+            <tr>
+                <td><span class="purple">A few</span></td>
+                <td><span class="green">A few students have arrived</span></td>
+                <td>A small number (usually 3-5)</td>
+                <td>Plural</td>
+                <td>Only for countable nouns</td>
+            </tr>
+            <tr>
+                <td><span class="purple">Few</span></td>
+                <td><span class="green">Few options exist</span></td>
+                <td>Almost none (emphasizes scarcity)</td>
+                <td>Plural</td>
+                <td>More negative than "a few"</td>
+            </tr>
+            <tr>
+                <td><span class="purple">A couple</span></td>
+                <td><span class="green">A couple of friends are coming</span></td>
+                <td>Two (or sometimes a small number, like 2-3)</td>
+                <td>Plural</td>
+                <td>Informal. Always "a couple of + plural noun"</td>
+            </tr>
+            <tr>
+                <td><span class="purple">A little</span></td>
+                <td><span class="green">A little sugar is left</span></td>
+                <td>A small amount (uncountable nouns)</td>
+                <td>Singular</td>
+                <td>Only for uncountable nouns</td>
+            </tr>
+            <tr>
+                <td><span class="purple">A bit</span></td>
+                <td><span class="green">A bit of patience is required</span></td>
+                <td>A small amount (similar to "a little")</td>
+                <td>Singular</td>
+                <td>Only for uncountable nouns</td>
+            </tr>
+            <tr>
+                <td><span class="purple">A lot of</span></td>
+                <td><span class="green">A lot of people enjoy music</span> / <span class="green">A lot of time has passed</span></td>
+                <td>A large amount/number</td>
+                <td>Plural / Singular (uncountable)</td>
+                <td>Works with countable plurals and uncountable nouns</td>
+            </tr>
+            <tr>
+                <td><span class="purple">Lots of</span></td>
+                <td><span class="green">Lots of birds are singing</span> / <span class="green">Lots of water was wasted</span></td>
+                <td>Same as "a lot of" (informal)</td>
+                <td>Plural / Singular (uncountable)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><span class="purple">Many</span></td>
+                <td><span class="green">Many students prefer coffee</span></td>
+                <td>A large number (countable nouns)</td>
+                <td>Plural</td>
+                <td>Only for countable nouns</td>
+            </tr>
+            <tr>
+                <td><span class="purple">Much</span></td>
+                <td><span class="green">Much progress has been made</span></td>
+                <td>A large amount (uncountable nouns)</td>
+                <td>Singular</td>
+                <td>Only for uncountable nouns</td>
+            </tr>
+            <tr>
+                <td><span class="purple">Plenty of</span></td>
+                <td><span class="green">Plenty of opportunities await</span> / <span class="green">Plenty of time remains</span></td>
+                <td>More than enough (positive connotation)</td>
+                <td>Plural / Singular (uncountable)</td>
+                <td>Works with countable plurals and uncountable nouns</td>
+            </tr>
+            <tr>
+                <td><span class="purple">Most</span></td>
+                <td><span class="green">Most people like chocolate</span> / <span class="green">Most water is clean</span></td>
+                <td>The majority</td>
+                <td>Plural / Singular (uncountable)</td>
+                <td>Works with countable plurals and uncountable nouns</td>
+            </tr>
+            <tr>
+                <td><span class="purple">All</span></td>
+                <td><span class="green">All the cookies are gone</span> / <span class="green">All the milk is spilled</span></td>
+                <td>100% of something</td>
+                <td>Plural / Singular (uncountable)</td>
+                <td>Works with countable plurals and uncountable nouns</td>
+            </tr>
+            <tr>
+                <td><span class="purple">Enough</span></td>
+                <td><span class="green">Enough apples are ripe</span> / <span class="green">Enough money was saved</span></td>
+                <td>Sufficient quantity</td>
+                <td>Plural / Singular (uncountable)</td>
+                <td>Works with countable plurals and uncountable nouns</td>
+            </tr>
+            <tr>
+                <td><span class="purple">Several</span></td>
+                <td><span class="green">Several books were lost</span></td>
+                <td>More than "a few" but not "many" (usually 5-10)</td>
+                <td>Plural</td>
+                <td>Only for countable nouns</td>
+            </tr>
+            <tr>
+                <td><span class="purple">Any</span></td>
+                <td><span class="green">Any questions?</span> (Are any...) / <span class="green">Any cookies are fine</span> / <span class="green">Any help is appreciated</span></td>
+                <td>Used in questions/negatives for "an unspecified amount"</td>
+                <td>Plural/Singular</td>
+                <td>Adapts to the noun</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="exercise">
+        <h2>20-Sentence Challenge: "Spot the Intruder"</h2>
+        <p><strong>Instructions:</strong> Each question has four options. Three are correct, and one is incorrect. Click the incorrect option!</p>
+
+        <div class="question">1. I need _______ more time to finish.</div>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, false)">a few</div>
+            <div class="option" onclick="checkAnswer(this, true)">a little</div>
+            <div class="option" onclick="checkAnswer(this, true)">some</div>
+            <div class="option" onclick="checkAnswer(this, false)">plenty of</div>
+        </div>
+
+        <div class="question">2. _______ of the students passed the exam.</div>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, true)">Most</div>
+            <div class="option" onclick="checkAnswer(this, true)">Many</div>
+            <div class="option" onclick="checkAnswer(this, true)">A few</div>
+            <div class="option" onclick="checkAnswer(this, false)">Much</div>
+        </div>
+
+        <div class="question">3. There are _______ ways to solve this problem.</div>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, true)">a couple of</div>
+            <div class="option" onclick="checkAnswer(this, true)">several</div>
+            <div class="option" onclick="checkAnswer(this, false)">a little</div>
+            <div class="option" onclick="checkAnswer(this, true)">a few</div>
+        </div>
+
+        <div class="question">4. _______ progress has been made this week.</div>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, true)">Much</div>
+            <div class="option" onclick="checkAnswer(this, true)">A lot of</div>
+            <div class="option" onclick="checkAnswer(this, false)">Many</div>
+            <div class="option" onclick="checkAnswer(this, true)">Some</div>
+        </div>
+
+        <div class="question">5. She has _______ experience in marketing.</div>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, true)">a little</div>
+            <div class="option" onclick="checkAnswer(this, false)">few</div>
+            <div class="option" onclick="checkAnswer(this, true)">plenty of</div>
+            <div class="option" onclick="checkAnswer(this, true)">some</div>
+        </div>
+
+        <div class="question">6. _______ of my friends are coming to the party.</div>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, true)">A couple</div>
+            <div class="option" onclick="checkAnswer(this, true)">Several</div>
+            <div class="option" onclick="checkAnswer(this, false)">A bit</div>
+            <div class="option" onclick="checkAnswer(this, true)">A few</div>
+        </div>
+
+        <div class="question">7. Do you have _______ questions?</div>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, true)">any</div>
+            <div class="option" onclick="checkAnswer(this, true)">some</div>
+            <div class="option" onclick="checkAnswer(this, false)">much</div>
+            <div class="option" onclick="checkAnswer(this, true)">a few</div>
+        </div>
+
+        <div class="question">8. _______ the cake is gone!</div>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, true)">All</div>
+            <div class="option" onclick="checkAnswer(this, true)">Most</div>
+            <div class="option" onclick="checkAnswer(this, false)">A little</div>
+            <div class="option" onclick="checkAnswer(this, true)">Some</div>
+        </div>
+
+        <div class="question">9. He drank _______ water after the workout.</div>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, true)">a lot of</div>
+            <div class="option" onclick="checkAnswer(this, false)">many</div>
+            <div class="option" onclick="checkAnswer(this, true)">some</div>
+            <div class="option" onclick="checkAnswer(this, true)">a bit of</div>
+        </div>
+
+        <div class="question">10. _______ people understand this rule.</div>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, true)">Few</div>
+            <div class="option" onclick="checkAnswer(this, true)">A few</div>
+            <div class="option" onclick="checkAnswer(this, true)">Several</div>
+            <div class="option" onclick="checkAnswer(this, false)">Much</div>
+        </div>
+
+        <div class="question">11. There isn't _______ sugar left.</div>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, true)">much</div>
+            <div class="option" onclick="checkAnswer(this, false)">many</div>
+            <div class="option" onclick="checkAnswer(this, true)">any</div>
+            <div class="option" onclick="checkAnswer(this, true)">a little</div>
+        </div>
+
+        <div class="question">12. _______ of the puppies are asleep.</div>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, true)">A couple</div>
+            <div class="option" onclick="checkAnswer(this, false)">A bit</div>
+            <div class="option" onclick="checkAnswer(this, true)">Several</div>
+            <div class="option" onclick="checkAnswer(this, true)">A few</div>
+        </div>
+
+        <div class="question">13. Can I have _______ more coffee?</div>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, true)">a little</div>
+            <div class="option" onclick="checkAnswer(this, false)">a few</div>
+            <div class="option" onclick="checkAnswer(this, true)">some</div>
+            <div class="option" onclick="checkAnswer(this, true)">any</div>
+        </div>
+
+        <div class="question">14. _______ time has passed since we last met.</div>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, true)">A lot of</div>
+            <div class="option" onclick="checkAnswer(this, false)">Many</div>
+            <div class="option" onclick="checkAnswer(this, true)">Plenty of</div>
+            <div class="option" onclick="checkAnswer(this, true)">Some</div>
+        </div>
+
+        <div class="question">15. I've read _______ books this month.</div>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, true)">a couple of</div>
+            <div class="option" onclick="checkAnswer(this, false)">much</div>
+            <div class="option" onclick="checkAnswer(this, true)">several</div>
+            <div class="option" onclick="checkAnswer(this, true)">a few</div>
+        </div>
+
+        <div class="question">16. _______ of these answers could be correct.</div>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, true)">Any</div>
+            <div class="option" onclick="checkAnswer(this, true)">Some</div>
+            <div class="option" onclick="checkAnswer(this, false)">A little</div>
+            <div class="option" onclick="checkAnswer(this, true)">A few</div>
+        </div>
+
+        <div class="question">17. _______ the information is outdated.</div>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, true)">All</div>
+            <div class="option" onclick="checkAnswer(this, true)">Most</div>
+            <div class="option" onclick="checkAnswer(this, false)">Many</div>
+            <div class="option" onclick="checkAnswer(this, true)">A lot of</div>
+        </div>
+
+        <div class="question">18. _______ of the cookies are missing.</div>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, true)">Some</div>
+            <div class="option" onclick="checkAnswer(this, false)">A little</div>
+            <div class="option" onclick="checkAnswer(this, true)">A few</div>
+            <div class="option" onclick="checkAnswer(this, true)">Several</div>
+        </div>
+
+        <div class="question">19. She gave me _______ strange looks.</div>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, true)">some</div>
+            <div class="option" onclick="checkAnswer(this, true)">a few</div>
+            <div class="option" onclick="checkAnswer(this, false)">much</div>
+            <div class="option" onclick="checkAnswer(this, true)">any</div>
+        </div>
+
+        <div class="question">20. _______ the milk is spoiled.</div>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, true)">All</div>
+            <div class="option" onclick="checkAnswer(this, true)">Most</div>
+            <div class="option" onclick="checkAnswer(this, false)">Many</div>
+            <div class="option" onclick="checkAnswer(this, true)">A bit</div>
+        </div>
+    </div>
+
+
+
+    <div class="exercise">
+        <h2>Bonus Challenge</h2>
+        <p>Write 3 original sentences using quantifiers from the table. Try to use both singular and plural examples!</p>
+        <p><strong>Example:</strong></p>
+        <ul>
+            <li>"<span class="green">A little patience is</span> all I need." (singular)</li>
+            <li>"<span class="green">Several ideas were</span> suggested." (plural)</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>Created by <strong>Petra Thurst</strong> • © 2026 • ESL Lesson Plan</p>
+    </footer>
+
+    <script>
+        function checkAnswer(element, isCorrect) {
+            if (!isCorrect) {
+                element.style.backgroundColor = "#e74c3c"; // Red for wrong answers
+                element.style.color = "white";
+                alert("❌ Incorrect! This is the wrong quantifier.");
+            } else {
+                element.style.backgroundColor = "#2ecc71"; // Green for correct answers
+                element.style.color = "white";
+            }
+        }
+    </script>
+</body>
+</html>

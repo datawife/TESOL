@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Prepositions of Time</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 20px;
+            border-bottom: 3px solid #3b82f6;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #3b82f6;
+        }
+
+        .subtitle {
+            color: #9ca3af;
+            font-size: 1.1em;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .stat-box {
+            background-color: #1a1a1a;
+            padding: 15px 25px;
+            border-radius: 8px;
+            border: 2px solid #374151;
+            min-width: 150px;
+            text-align: center;
+        }
+
+        .stat-label {
+            color: #9ca3af;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+
+        .stat-value {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        .level-selector {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .level-btn {
+            padding: 12px 25px;
+            background-color: #1a1a1a;
+            color: #fff;
+            border: 2px solid #374151;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s;
+        }
+
+        .level-btn:hover {
+            border-color: #3b82f6;
+            background-color: #252525;
+        }
+
+        .level-btn.active {
+            background-color: #3b82f6;
+            border-color: #3b82f6;
+        }
+
+        .level-btn.easy.active {
+            background-color: #10b981;
+            border-color: #10b981;
+        }
+
+        .level-btn.medium.active {
+            background-color: #f59e0b;
+            border-color: #f59e0b;
+        }
+
+        .level-btn.hard.active {
+            background-color: #ef4444;
+            border-color: #ef4444;
+        }
+
+        .question-card {
+            background-color: #1a1a1a;
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 2px solid #374151;
+        }
+
+        .question-number {
+            color: #9ca3af;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+        }
+
+        .question-text {
+            font-size: 1.3em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .blank {
+            display: inline-block;
+            min-width: 80px;
+            border-bottom: 2px solid #3b82f6;
+            margin: 0 5px;
+            padding: 0 10px;
+        }
+
+        .options {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .option-btn {
+            padding: 15px 40px;
+            background-color: #252525;
+            color: #fff;
+            border: 2px solid #374151;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: all 0.3s;
+            min-width: 100px;
+        }
+
+        .option-btn:hover {
+            border-color: #3b82f6;
+            background-color: #2a2a2a;
+        }
+
+        .option-btn.correct {
+            background-color: #10b981;
+            border-color: #10b981;
+        }
+
+        .option-btn.incorrect {
+            background-color: #ef4444;
+            border-color: #ef4444;
+        }
+
+        .option-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .feedback {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.1em;
+        }
+
+        .feedback.correct {
+            background-color: #065f46;
+            border: 2px solid #10b981;
+        }
+
+        .feedback.incorrect {
+            background-color: #7f1d1d;
+            border: 2px solid #ef4444;
+        }
+
+        .next-btn {
+            display: block;
+            margin: 20px auto 0;
+            padding: 15px 50px;
+            background-color: #3b82f6;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: all 0.3s;
+        }
+
+        .next-btn:hover {
+            background-color: #2563eb;
+        }
+
+        .completion-screen {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .completion-screen h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #10b981;
+        }
+
+        .final-score {
+            font-size: 3em;
+            margin: 30px 0;
+            color: #3b82f6;
+        }
+
+        .restart-btn {
+            padding: 15px 50px;
+            background-color: #10b981;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            margin-top: 20px;
+        }
+
+        .restart-btn:hover {
+            background-color: #059669;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .question-card {
+                padding: 25px;
+            }
+
+            .question-text {
+                font-size: 1.1em;
+            }
+
+            .option-btn {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Master Prepositions of Time</h1>
+            <p class="subtitle">Advanced Practice </p>
+        </header>
+
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-label">Score</div>
+                <div class="stat-value" id="score">0</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">Progress</div>
+                <div class="stat-value" id="progress">0/0</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">Accuracy</div>
+                <div class="stat-value" id="accuracy">0%</div>
+            </div>
+        </div>
+
+        <div class="level-selector">
+            <button class="level-btn easy active" onclick="setLevel('easy')">Advanced</button>
+            <button class="level-btn medium" onclick="setLevel('medium')">Expert</button>
+            <button class="level-btn hard" onclick="setLevel('hard')">Master</button>
+            <button class="level-btn" onclick="setLevel('all')">All Levels</button>
+        </div>
+
+        <div id="quiz-container"></div>
+    </div>
+
+    <script>
+        const questions = {
+            easy: [
+                { text: "The conference is scheduled ___ the morning of October 15th.", answer: "on" },
+                { text: "I usually work best ___ the early hours of the day.", answer: "in" },
+                { text: "The deadline for submissions is ___ precisely 11:59 PM.", answer: "at" },
+                { text: "We'll be traveling ___ the third week of August.", answer: "in" },
+                { text: "The exhibit opens ___ the first day of the month.", answer: "on" },
+                { text: "She always takes her break ___ exactly 2:30 PM.", answer: "at" },
+                { text: "The festival occurs annually ___ the month of July.", answer: "in" },
+                { text: "Our anniversary falls ___ a Wednesday this year.", answer: "on" },
+                { text: "The store offers discounts ___ specific hours on weekdays.", answer: "at" },
+                { text: "The committee meets ___ alternate Fridays.", answer: "on" },
+                { text: "Construction will commence ___ the beginning of next quarter.", answer: "at" },
+                { text: "The application period runs ___ the spring semester.", answer: "in" },
+                { text: "The ceremony is planned ___ the evening of the 24th.", answer: "on" },
+                { text: "The library is quietest ___ midday.", answer: "at" },
+                { text: "The project will be completed ___ the coming weeks.", answer: "in" },
+                { text: "The payment is due ___ the 15th of each month.", answer: "on" },
+                { text: "The performance begins ___ exactly 8:00 PM sharp.", answer: "at" },
+                { text: "We vacation ___ the latter part of summer.", answer: "in" },
+                { text: "The workshop is scheduled ___ consecutive Saturdays.", answer: "on" },
+                { text: "The discount applies ___ checkout only.", answer: "at" }
+            ],
+            medium: [
+                { text: "The board meeting is scheduled ___ 9 AM ___ Monday morning.", answer: "at, on" },
+                { text: "The exhibition runs ___ the autumn ___ weekdays only.", answer: "in, on" },
+                { text: "The deadline falls ___ midnight ___ New Year's Eve.", answer: "at, on" },
+                { text: "The conference takes place ___ the morning ___ the 15th of May.", answer: "in, on" },
+                { text: "The store operates ___ extended hours ___ holiday seasons.", answer: "at, in" },
+                { text: "The seminar is offered ___ the afternoon ___ alternate Thursdays.", answer: "in, on" },
+                { text: "The flight departs ___ 6:45 AM ___ a Tuesday morning.", answer: "at, on" },
+                { text: "The competition occurs ___ the winter ___ specific dates.", answer: "in, on" },
+                { text: "The discount is valid ___ noon ___ the last day of the sale.", answer: "at, on" },
+                { text: "The workshop is held ___ the evening ___ the first Friday of each month.", answer: "in, on" },
+                { text: "The museum opens ___ 10 AM ___ weekends.", answer: "at, on" },
+                { text: "The festival is celebrated ___ the spring ___ various locations.", answer: "in, at" },
+                { text: "The meeting is set ___ 3:30 PM ___ a Wednesday afternoon.", answer: "at, on" },
+                { text: "The course runs ___ the summer ___ weekday mornings.", answer: "in, on" },
+                { text: "The performance starts ___ dusk ___ Saturday evenings.", answer: "at, on" },
+                { text: "The sale begins ___ dawn ___ Black Friday.", answer: "at, on" },
+                { text: "The tournament takes place ___ the fall ___ multiple venues.", answer: "in, at" },
+                { text: "The ceremony commences ___ precisely 2 PM ___ the appointed day.", answer: "at, on" },
+                { text: "The class is offered ___ the morning ___ specific dates throughout the year.", answer: "in, on" },
+                { text: "The event occurs ___ night ___ the summer solstice.", answer: "at, on" }
+            ],
+            hard: [
+                { text: "The symposium is scheduled ___ the morning ___ the third day ___ the conference.", answer: "in, on, of" },
+                { text: "The transaction will be processed ___ precisely 4:30 PM ___ the last business day ___ the month.", answer: "at, on, of" },
+                { text: "The festival occurs annually ___ the weekend ___ the autumnal equinox.", answer: "on, of" },
+                { text: "The consultation is available ___ specific hours ___ weekdays ___ the winter months.", answer: "at, on, in" },
+                { text: "The exhibition opens ___ 10 AM ___ the morning ___ the first day ___ the event.", answer: "at, in, on, of" },
+                { text: "The deadline falls ___ midnight ___ the final day ___ the submission period.", answer: "at, on, of" },
+                { text: "The ceremony begins ___ dusk ___ the evening ___ the summer solstice.", answer: "at, on, of" },
+                { text: "The workshop is offered ___ the afternoon ___ alternate Thursdays ___ the academic year.", answer: "in, on, during" },
+                { text: "The performance starts ___ precisely 7:30 PM ___ Saturday evenings ___ the month of December.", answer: "at, on, in" },
+                { text: "The sale commences ___ dawn ___ the morning ___ Black Friday.", answer: "at, on, of" },
+                { text: "The competition takes place ___ specific times ___ weekdays ___ the spring semester.", answer: "at, on, during" },
+                { text: "The meeting is scheduled ___ 2:15 PM ___ the afternoon ___ the second Tuesday ___ each month.", answer: "at, in, on, of" },
+                { text: "The tour departs ___ 9:45 AM ___ Wednesday mornings ___ the summer season.", answer: "at, on, during" },
+                { text: "The class is held ___ the evening ___ the last Thursday ___ each month ___ the academic calendar.", answer: "in, on, of, of" },
+                { text: "The event occurs ___ night ___ the weekend ___ the winter holidays.", answer: "at, on, during" },
+                { text: "The presentation begins ___ exactly 11 AM ___ the morning ___ the final day ___ the conference.", answer: "at, in, on, of" },
+                { text: "The consultation is available ___ specific hours ___ weekdays ___ the autumn months.", answer: "at, on, during" },
+                { text: "The exhibition runs ___ the afternoon ___ Fridays ___ the month of October.", answer: "in, on, during" },
+                { text: "The deadline is set ___ 5 PM sharp ___ the final Friday ___ the fiscal quarter.", answer: "at, on, of" },
+                { text: "The ceremony commences ___ precisely 3:30 PM ___ the afternoon ___ the appointed day ___ the event.", answer: "at, in, on, of" }
+            ]
+        };
+
+        let currentLevel = 'easy';
+        let currentQuestions = [];
+        let currentIndex = 0;
+        let score = 0;
+        let answered = false;
+        let totalAnswered = 0;
+        let correctCount = 0;
+
+        function setLevel(level) {
+            currentLevel = level;
+            document.querySelectorAll('.level-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            resetQuiz();
+        }
+
+        function resetQuiz() {
+            if (currentLevel === 'all') {
+                currentQuestions = [...questions.easy, ...questions.medium, ...questions.hard];
+            } else {
+                currentQuestions = [...questions[currentLevel]];
+            }
+            
+            // Shuffle questions
+            currentQuestions.sort(() => Math.random() - 0.5);
+            
+            currentIndex = 0;
+            score = 0;
+            totalAnswered = 0;
+            correctCount = 0;
+            answered = false;
+            
+            updateStats();
+            showQuestion();
+        }
+
+        function updateStats() {
+            document.getElementById('score').textContent = score;
+            document.getElementById('progress').textContent = `${currentIndex + 1}/${currentQuestions.length}`;
+            const accuracy = totalAnswered > 0 ? Math.round((correctCount / totalAnswered) * 100) : 0;
+            document.getElementById('accuracy').textContent = `${accuracy}%`;
+        }
+
+        function showQuestion() {
+            if (currentIndex >= currentQuestions.length) {
+                showCompletion();
+                return;
+            }
+
+            answered = false;
+            const question = currentQuestions[currentIndex];
+            const questionText = question.text.replace(/_+/g, '<span class="blank">____</span>');
+            
+            const container = document.getElementById('quiz-container');
+            container.innerHTML = `
+                <div class="question-card">
+                    <div class="question-number">Question ${currentIndex + 1} of ${currentQuestions.length}</div>
+                    <div class="question-text">${questionText}</div>
+                    <div class="options">
+                        <button class="option-btn" onclick="checkAnswer('on')">on</button>
+                        <button class="option-btn" onclick="checkAnswer('in')">in</button>
+                        <button class="option-btn" onclick="checkAnswer('at')">at</button>
+                        <button class="option-btn" onclick="checkAnswer('of')">of</button>
+                        <button class="option-btn" onclick="checkAnswer('during')">during</button>
+                    </div>
+                    <div id="feedback"></div>
+                </div>
+            `;
+        }
+
+        function checkAnswer(selected) {
+            if (answered) return;
+            
+            answered = true;
+            totalAnswered++;
+            
+            const question = currentQuestions[currentIndex];
+            const correctAnswers = question.answer.split(', ');
+            const isCorrect = correctAnswers.includes(selected);
+            
+            const buttons = document.querySelectorAll('.option-btn');
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                if (correctAnswers.includes(btn.textContent)) {
+                    btn.classList.add('correct');
+                } else if (btn.textContent === selected && !isCorrect) {
+                    btn.classList.add('incorrect');
+                }
+            });
+            
+            const feedback = document.getElementById('feedback');
+            if (isCorrect) {
+                score += 10;
+                correctCount++;
+                feedback.className = 'feedback correct';
+                feedback.innerHTML = `
+                    ✓ Correct! The answer is: ${question.answer}
+                    <button class="next-btn" onclick="nextQuestion()">Next Question</button>
+                `;
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.innerHTML = `
+                    ✗ Incorrect. The correct answer is: ${question.answer}
+                    <button class="next-btn" onclick="nextQuestion()">Next Question</button>
+                `;
+            }
+            
+            updateStats();
+        }
+
+        function nextQuestion() {
+            currentIndex++;
+            showQuestion();
+        }
+
+        function showCompletion() {
+            const accuracy = Math.round((correctCount / totalAnswered) * 100);
+            const container = document.getElementById('quiz-container');
+            
+            let message = '';
+            let color = '';
+            if (accuracy >= 90) {
+                message = 'Outstanding!';
+                color = '#10b981';
+            } else if (accuracy >= 70) {
+                message = 'Great job!';
+                color = '#3b82f6';
+            } else if (accuracy >= 50) {
+                message = 'Good effort!';
+                color = '#f59e0b';
+            } else {
+                message = 'Keep practicing!';
+                color = '#ef4444';
+            }
+            
+            container.innerHTML = `
+                <div class="completion-screen">
+                    <h2 style="color: ${color}">${message}</h2>
+                    <div class="final-score">${accuracy}%</div>
+                    <p style="font-size: 1.2em; margin-bottom: 20px;">
+                        You got ${correctCount} out of ${totalAnswered} questions correct!
+                    </p>
+                    <p style="color: #9ca3af; margin-bottom: 30px;">
+                        Total Score: ${score} points
+                    </p>
+                    <button class="restart-btn" onclick="resetQuiz()">Practice Again</button>
+                </div>
+            `;
+        }
+
+        // Initialize
+        resetQuiz();
+    </script>
+</body>
+</html>
