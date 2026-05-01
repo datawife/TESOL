@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page {
+            size: A4;
+            margin: 15mm;
+            background-color: #000000;
+        }
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2, h3, h4 {
+            color: #ff8c00;
+            text-transform: uppercase;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+        }
+        .container {
+            padding: 20px;
+            background-color: #000000; /* Ensures container is black */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #000000; /* Pure black background */
+            color: #ffffff;
+        }
+        th, td {
+            border: 1px solid #ff8c00; /* Orange borders for visibility */
+            padding: 12px;
+            text-align: left;
+            background-color: #000000; /* Forces every cell to be black */
+        }
+        th {
+            color: #ff8c00;
+            background-color: #000000;
+        }
+        /* Specific overrides to prevent any gray/white artifacts */
+        tr {
+            background-color: #000000 !important;
+        }
+        
+        .timeline-container {
+            margin: 40px 0;
+            text-align: center;
+        }
+        .timeline-line {
+            height: 2px;
+            background-color: #ffffff;
+            position: relative;
+            margin: 60px 0;
+        }
+       
+     
+        .label-above {
+            position: absolute;
+            top: -45px;
+            width: 100%;
+            text-align: center;
+            font-size: 1.2em;
+            color: #ff8c00;
+        }
+        .marker {
+            position: absolute;
+            height: 20px;
+            width: 2px;
+            background-color: #ff8c00;
+            top: -10px;
+        }
+        .marker-label {
+            position: absolute;
+            top: 25px;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            text-align: center;
+        }
+        .important {
+            font-weight: bold;
+            font-style: italic;
+        }
+        .task-box {
+            border: 2px dashed #ff8c00;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        .dollar {
+            color: #ff8c00;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>English Grammar Cheat Sheet </h2>
+
+        <h4> Three BIG Verbs</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Pronoun</th>
+                    <th>To BE (Status)</th>
+                    <th>To DO (Action)</th>
+                    <th>To HAVE (Possession)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>He / She / It</td>
+                    <td>i<span class="dollar">$</span></td>
+                    <td>doe<span class="dollar">$</span></td>
+                    <td>ha<span class="dollar">$</span></td>
+                </tr>
+                <tr>
+                    <td>You / We / They</td>
+                    <td>are</td>
+                    <td rowspan="2">do</td>
+                    <td rowspan="2">have</td>
+                </tr>
+                <tr>
+                    <td>I</td>
+                    <td>am</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><i>Examples:</i><br>
+        • He <span class="important">i$</span> a teacher.<br>
+        • She <span class="important">doe$</span> her exercise.<br>
+        • It <span class="important">ha$</span> some free time.</p>
+
+        <h4>PRESENT Tense Timeline</h4>
+        <div class="timeline-container">
+            <div class="timeline-line">     
+                <div class="marker" style="left: 0%;"></div>
+                <div class="marker-label" style="left: 10%;">
+                    <span class="important">Continuous</span><br>am / i<span class="dollar">$</span> / are<br>in progress                </div>
+
+                <div class="marker" style="left: 50%;"></div>
+                <div class="marker-label" style="left: 50%;">
+                    <span class="important">Simple</span><br>do / doe<span class="dollar">$</span><br> right now/regularly
+                </div>
+
+                <div class="marker" style="left: 100%;"></div>
+                <div class="marker-label" style="left: 90%;">
+                    <span class="important">Perfect</span><br>have / ha<span class="dollar">$</span><br> all done
+                </div>
+            </div>
+        </div>
+        <br><br>
+
+        <h4>Statement Structure</h4>
+        <p>For standard statements: <span class="important">Subject + Verb + Object</span>.</p>
+      
+         <h4>Question structure</h4>
+       <p><i>with question words:</i><br>
+        • What/Where/How + <span class="important">DO</span> + you/we/they/I + verb?<br>
+        • What/Where/How + <span class="important">DOE$</span> + he/she/it + verb?</p>
+   <p><i>without question words:</i><br>
+   • <span class="important">DO</span> + you/we/they/I + verb?<br>
+        •  <span class="important">DOE$</span> + he/she/it + verb?</p>
+        <h3>Practice Tasks</h3>
+        <div class="task-box">
+            <h4>Task 1: Numbers</h4>
+            <p>Count from <span class="important">1 to 100</span> every day!</p>
+            
+            <h4>Task 2: The "To BE" Reflex</h4>
+            <p>Practice until you instantly match pronouns with their status: "She" -> <span class="important">i$</span>, "They" -> <span class="important">are</span>.</p>
+            
+            <h4>Task 3: Simple Statements (SVO)</h4>
+            <p>Write 5 sentences using the Subject-Verb-Object pattern.</p>
+            
+            <h4>Task 4: The Question Flip</h4>
+            <p>Turn your Task 3 sentences into questions using <span class="important">Do</span> or <span class="important">Doe$</span>.</p>
+        </div>
+    </div>
+</body>
+</html>
